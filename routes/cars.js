@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
+
 const router =express.Router();
+
 
 mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
 

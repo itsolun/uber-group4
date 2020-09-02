@@ -20,4 +20,5 @@ mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
   }) 
 
   const Story = mongoose.model('trip', storySchema);
+  
   module.exports=router;
