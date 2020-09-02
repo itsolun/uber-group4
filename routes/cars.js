@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-var schema = mongoose.Schema;
+const router =express.Router();
+
+mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
 
 var CarSchema = new mongoose.Schema({
     CarModel: String,
@@ -12,4 +14,4 @@ var CarSchema = new mongoose.Schema({
     CarYear: Date,
 })
 
-module.exports = mongoose.route('Cars', Carschema);
+module.exports = mongoose.router('Cars', Carschema);
