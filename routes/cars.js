@@ -7,7 +7,11 @@ mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
 
 var CarSchema = new mongoose.Schema({
     CarModel: String,
-    Driver: String,
+    Driver: { 
+        type: Schema.Types.ObjectId, 
+        ref: 'user',
+        required: true,
+     },
     license: {
         type: String,
         required: true,
