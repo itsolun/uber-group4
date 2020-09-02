@@ -3,15 +3,15 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 const Car = require("../models/car");
-router.put('/updatecarStatus', function(req, res) {
+router.put('/status', function(req, res) {
     var carId = req.header('car_id');
     var status = req.header('status');
 
-    car.findById(carId, function (err, car) {
+    car.find(carId, function (err, car) {
         if(err) {
             res.json({
                 valid: false,
-                message: "not found"
+                message: "no car data"
             });
         }
         else {
@@ -38,19 +38,19 @@ router.put('/updatecarStatus', function(req, res) {
 router.get('/getcarData', function (req, res, next) {
 
     var carId = req.header('car_id');
-    car.findById(carId, function (err, car) {
+    car.find(carId, function (err, car) {
         if(err) {
             res.json({
                 valid: false,
-                message: "not valid ID"
+                message: "unvalid ID"
             });
         }
         else {
-            User.findById(car.personalData, function (err, user) {
+            User.find(car.name, function (err, user) {
                 if(err) {
                     res.json({
                         valid: false,
-                        message: "wrong operation"
+                        message: "Error"
                     });
                 }
                 else {
@@ -65,4 +65,5 @@ router.get('/getcarData', function (req, res, next) {
         }
     });
 });
+
 module.exports = router;
