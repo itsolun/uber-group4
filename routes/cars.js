@@ -7,10 +7,13 @@ var CarSchema = new mongoose.Schema({
     CarModel: String,
     Driver: String,
     license: {
-        type: Boolean,
+        type: String,
         required: true,
     },
-    platenumber: Number,
+    platenumber: {
+        type: Number,
+        required: true,
+    },
     CarYear: Date,
 })
 
