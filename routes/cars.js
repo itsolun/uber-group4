@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-
+const Schema = mongoose.Schema;
+const User = require('./user');
 const router =express.Router();
 
 
@@ -17,7 +18,7 @@ var CarSchema = new mongoose.Schema({
         required: true,
     },
     platenumber: {
-        type: Number,
+        type: String,
         required: true,
     },
     CarYear: Date,
