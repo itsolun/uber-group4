@@ -7,8 +7,10 @@ const mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
 
   const Schema = mongoose.Schema;
-  const userSchema =Schema ({
-     username:String,
+  const UserSchema =Schema ({
+     username:{
+      type:Schema.Types.ObjectId, 
+       required:true},
      password: String,
      email:String ,
      token:String ,
@@ -16,9 +18,9 @@ mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
      currentLocation : Object,
      available: Boolean,
      mobileNumber:Number ,
-     currentCar:String
+      currentCar:{ type: Schema.Types.ObjectId, ref: 'car' }
+    
  
   }) 
 
-    
-  module.exports=router;
+   module.exports = mongoose.model('User', Userschema);
