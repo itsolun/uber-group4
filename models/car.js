@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const UserSchema = require('./user');
 
 
-mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/users', { useNewUrlParser: true });
 
 var CarsSchema = new mongoose.Schema({
     CarModel: String,
@@ -26,4 +26,4 @@ var CarsSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Car', Carschema);
+module.exports = mongoose.model('Car', CarsSchema);
