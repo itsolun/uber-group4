@@ -1,11 +1,8 @@
 var mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const Schema = require('mongoose').Schema;
 const UserSchema = require('./user');
-
-
-
-mongoose.connect("mongodb+srv://Uberdb:Toqa12@cluster0.2sv4w.gcp.mongodb.net/Uberdb?retryWrites=true&w=majority", { useNewUrlParser: true });
-mongoose.createConnection("mongodb+srv://Uberdb:Toqa12@cluster0.2sv4w.gcp.mongodb.net/Uberdb?retryWrites=true&w=majority", { useNewUrlParser: true });
+const bcrypt = require('bcryptjs');
+const config = require('../config/database');
 
 
 var CarsSchema = new mongoose.Schema({

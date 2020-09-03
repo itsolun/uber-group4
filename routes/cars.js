@@ -1,8 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
-
+const Schema = require('mongoose').Schema;
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const config = require('../config/database');
 const Car = require("../models/car");
+
+
 router.put('/status', function(req, res) {
     var carId = req.header('car_id');
     var status = req.header('status');

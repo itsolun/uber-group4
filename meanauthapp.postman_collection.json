@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "bf0d9129-8ff2-4f45-b7ea-1446b235c7fe",
+		"name": "meanauthapp",
+		"description": "Mean Stack Authentication Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/users/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mseoudi\",\r\n    \"password\":\"xagonale42\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"authenticate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3000/users/authenticate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"mseoudi\",\r\n    \"password\":\"xagonale42\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "528"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"210-eNOBrdU7oce1zsrKg24x3VQZ0vs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Sep 2020 16:55:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"token\": \"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjUxMGVjY2MwY2NmZDNjNTAyNTMxMTQiLCJuYW1lIjoiTWFobW91ZCBTZW91ZGkiLCJlbWFpbCI6Im1haG1vdWRAaXRzb2x1bi5jb20iLCJ1c2VybmFtZSI6Im1zZW91ZGkiLCJwYXNzd29yZCI6IiQyYSQxMCRDazBLVTIzRTVqRjU2OTZnbnJVbWF1MS5leEIzWkdCUnZaOU5na2VOUlBlRmgxcVlCcnBWaSIsIl9fdiI6MCwiaWF0IjoxNTk5MTUyMTAzLCJleHAiOjE1OTk3NTY5MDN9.4UF5rR0vjTm3QyfIbhbxrVZFYGk-u8fV3wQpui4SD9o\",\n    \"user\": {\n        \"id\": \"5f510eccc0ccfd3c50253114\",\n        \"name\": \"Mahmoud Seoudi\",\n        \"username\": \"mseoudi\",\n        \"email\": \"mahmoud@itsolun.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3000/users/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Mahmoud Seoudi\",\r\n    \"email\":\"mahmoud@itsolun.com\",\r\n    \"username\":\"mseoudi\",\r\n    \"password\":\"xagonale42\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjUxMGVjY2MwY2NmZDNjNTAyNTMxMTQiLCJuYW1lIjoiTWFobW91ZCBTZW91ZGkiLCJlbWFpbCI6Im1haG1vdWRAaXRzb2x1bi5jb20iLCJ1c2VybmFtZSI6Im1zZW91ZGkiLCJwYXNzd29yZCI6IiQyYSQxMCRDazBLVTIzRTVqRjU2OTZnbnJVbWF1MS5leEIzWkdCUnZaOU5na2VOUlBlRmgxcVlCcnBWaSIsIl9fdiI6MCwiaWF0IjoxNTk5MTUyMTAzLCJleHAiOjE1OTk3NTY5MDN9.4UF5rR0vjTm3QyfIbhbxrVZFYGk-u8fV3wQpui4SD9o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
