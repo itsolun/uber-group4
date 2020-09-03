@@ -4,7 +4,15 @@ app.use(express.json());
 const router =express.Router();
 
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Online-store:Tokatoka12@cluster0.2sv4w.gcp.mongodb.net/Online-shop?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
   const Schema = mongoose.Schema;
   const UserSchema =Schema ({
@@ -23,4 +31,4 @@ mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
  
   }) 
 
-   module.exports = mongoose.model('User', Userschema);
+   module.exports = mongoose.model('User', UserSchema);

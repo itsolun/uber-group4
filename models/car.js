@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 const UserSchema = require('./user');
 
 
-mongoose.connect('mongodb://localhost:27017/users', { useNewUrlParser: true });
+
+mongoose.connect("mongodb+srv://Uberdb:Toqa12@cluster0.2sv4w.gcp.mongodb.net/Uberdb?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.createConnection("mongodb+srv://Uberdb:Toqa12@cluster0.2sv4w.gcp.mongodb.net/Uberdb?retryWrites=true&w=majority", { useNewUrlParser: true });
+
 
 var CarsSchema = new mongoose.Schema({
     CarModel: String,
